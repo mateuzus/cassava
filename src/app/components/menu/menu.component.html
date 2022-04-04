@@ -1,0 +1,21 @@
+<div class="thf-wrapper">
+  <thf-menu t-collapsed [t-menus]="menus">
+    <div *t-menu-header-template class="thf-p-2 thf-font-title sample-menu-header-text-color">
+      <img class="logo" src="../../../assets/totvs-logo-menu.svg" alt="Logo Totvs">
+    </div>
+  </thf-menu>
+
+  <thf-toolbar t-title="Exames" [t-show-notification]="false"></thf-toolbar>
+
+  <thf-page-default t-title="Lista de Exames">
+    <thf-button t-label="Filtro" t-type="primary" (t-click)="openFilterModal()">
+    </thf-button>
+
+    <thf-modal [t-primary-action]="getPrimaryActions()" [t-secondary-action]="getSecondaryActions()" t-click-out="true">
+      <div *ngIf="modal_type === 'filter'">
+        <app-filter></app-filter>
+      </div>
+    </thf-modal>
+
+  </thf-page-default>
+</div>
