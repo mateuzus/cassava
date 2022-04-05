@@ -29,7 +29,15 @@ export class MenuComponent implements OnInit {
     this.router.navigate(['menu'])
   }
   //Ações primárias
-  private modal_primary_action_confirm: ThfModalAction = {
+  private modal_primary_action_confirm_filter: ThfModalAction = {
+    label: 'Confirmar',
+    danger: false,
+    action: () => {
+      alert('requisição sendo feita')
+    }
+  }
+
+  private modal_primary_action_confirm_apont: ThfModalAction = {
     label: 'Confirmar',
     danger: false,
     action: () => {
@@ -49,7 +57,8 @@ export class MenuComponent implements OnInit {
   //Ações primárias dos modais
   getPrimaryActions(): any {
     let actions = {
-      filter: this.modal_primary_action_confirm
+      filter: this.modal_primary_action_confirm_filter,
+      apontamento: this.modal_primary_action_confirm_apont
     }
 
     return actions[this.modal_type]
@@ -59,7 +68,8 @@ export class MenuComponent implements OnInit {
   //Ações secundárias dos modais
   getSecondaryActions(): any {
     let actions = {
-      filter: this.modal_secondary_action_close
+      filter: this.modal_secondary_action_close,
+      apontamento: this.modal_secondary_action_close
     }
 
     return actions[this.modal_type]
@@ -67,6 +77,11 @@ export class MenuComponent implements OnInit {
 
   openFilterModal() {
     this.modal_type = 'filter'
+    this.thfModal.open()
+  }
+
+  openApontModal() {
+    this.modal_type = 'apontamento'
     this.thfModal.open()
   }
 

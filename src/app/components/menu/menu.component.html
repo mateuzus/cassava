@@ -8,14 +8,27 @@
   <thf-toolbar t-title="Exames" [t-show-notification]="false"></thf-toolbar>
 
   <thf-page-default t-title="Lista de Exames">
-    <thf-button t-label="Filtro" t-type="primary" (t-click)="openFilterModal()">
-    </thf-button>
+    <thf-button t-label="Filtro" t-type="primary" (t-click)="openFilterModal()"></thf-button>
+    <thf-button class="insert-apont" t-type="primary" (t-click)="openApontModal()" t-label="Inserir apont."></thf-button>
 
     <thf-modal [t-primary-action]="getPrimaryActions()" [t-secondary-action]="getSecondaryActions()" t-click-out="true">
       <div *ngIf="modal_type === 'filter'">
         <app-filter></app-filter>
       </div>
+
+      <div *ngIf="modal_type === 'apontamento'">
+        <app-inserir-apontamentos></app-inserir-apontamentos>
+      </div>
     </thf-modal>
 
+    <div class="exames">
+      <p>Exames</p>
+      <app-tabela-exames></app-tabela-exames>
+    </div>
+
+    <div class="apontamentos">
+      <p>Apontamentos</p>
+      <app-tabela-apontamentos></app-tabela-apontamentos>
+    </div>
   </thf-page-default>
 </div>
