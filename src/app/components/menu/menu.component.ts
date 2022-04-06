@@ -19,6 +19,7 @@ export class MenuComponent implements OnInit {
   }
 
   modal_type = ''
+  title: string = ''
 
   menus: Array<ThfMenuItem> = [
     { label: 'home', action: this.printMenuAction, icon: 'thf-icon-home', shortLabel: 'Home' }
@@ -77,11 +78,13 @@ export class MenuComponent implements OnInit {
 
   openFilterModal() {
     this.modal_type = 'filter'
+    this.title = 'Filtro'
     this.thfModal.open()
   }
 
   openApontModal() {
     this.modal_type = 'apontamento'
+    this.title = 'Apontamento do Exame'
     this.thfModal.open()
   }
 
