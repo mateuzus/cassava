@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +8,8 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent implements OnInit {
 
-  error: string | null = null;
-  operador: any;
-  form: FormGroup = new FormGroup({
-    username: new FormControl(''),
-  });
+  login: any
+  senha: any
 
   constructor(private router: Router) { }
 
@@ -21,11 +17,14 @@ export class LoginComponent implements OnInit {
   }
 
   submit() {
-    let data = this.form.value;
-
-    if (this.operador == "9999999990" || "123")
-    {
+    let data = [
+      { login: this.login, senha: this.senha }
+    ]
+    console.log(data)
+    if (this.login == "123" && this.senha == "123") {
       this.router.navigate(['menu']);
+    } else {
+      console.log('Senha incorreta!')
     }
   }
 

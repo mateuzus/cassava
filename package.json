@@ -21,6 +21,7 @@
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "@totvs/thf-templates": "^4.0.2",
     "@totvs/thf-ui": "^4.0.2",
     "bootstrap": "^5.1.3",
     "hammerjs": "^2.0.8",

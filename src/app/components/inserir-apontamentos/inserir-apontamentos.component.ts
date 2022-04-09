@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, Output } from '@angular/core';
 import { ThfRadioGroupOption } from '@totvs/thf-ui';
 
 @Component({
@@ -15,6 +15,14 @@ export class InserirApontamentosComponent implements OnInit {
     { label: 'Alterado', value: '4' }
   ]
 
+  seq: string = ''
+  desc: string = ''
+  optionSelected: ThfRadioGroupOption
+  apos: string = ''
+  numero: string = ''
+  tpResult: string = ''
+  resultado: string = ''
+
   data: Date = new Date();
   dia: string = String(this.data.getDate()).padStart(2, '0');
   mes: string = String(this.data.getMonth() + 1).padStart(2, '0');
@@ -25,26 +33,14 @@ export class InserirApontamentosComponent implements OnInit {
   h: any = this.hoje.getHours()
   m: any = this.hoje.getMinutes()
 
-  horaAtual: string = `${this.h}:${this.m}`
+  horaAtual: string = ''
 
   constructor() { }
 
   ngOnInit() {
-    this.addZeroLeftHour()
-  }
-
-  addZeroLeftHour(){
-    if(this.h < 10){
-      "0" + this.h
-    } else {
-      this.h
-    }
-
-    if(this.m < 10){
-      "0" + this.m
-    } else {
-      this.m
-    }
+    this.h = (this.h < 10) ? "0" + this.h : this.h
+    this.m = (this.m < 10) ? "0" + this.m : this.m
+    this.horaAtual = `${this.h}:${this.m}` 
   }
 
 }

@@ -1,4 +1,5 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { InserirApontamentosComponent } from './../inserir-apontamentos/inserir-apontamentos.component';
+import { Component, OnInit, ViewChild  } from '@angular/core';
 import { Router } from '@angular/router';
 import { ThfMenuItem, ThfModalAction, ThfModalComponent, ThfTableComponent } from '@totvs/thf-ui';
 
@@ -11,10 +12,17 @@ export class MenuComponent implements OnInit {
 
   @ViewChild(ThfModalComponent, { static: true }) thfModal: ThfModalComponent;
   @ViewChild(ThfTableComponent, { static: true }) thfTable: ThfTableComponent;
+  @ViewChild(InserirApontamentosComponent, { static: false }) apontamentos: InserirApontamentosComponent
+
+  itemsApont: Array<any> = []
 
   constructor(private router: Router) {}
 
   ngOnInit(): void {
+
+  }
+
+  AfterViewInit() {
 
   }
 
@@ -24,7 +32,6 @@ export class MenuComponent implements OnInit {
   menus: Array<ThfMenuItem> = [
     { label: 'home', action: this.printMenuAction, icon: 'thf-icon-home', shortLabel: 'Home' }
   ];
-
 
   printMenuAction() {
     this.router.navigate(['menu'])
@@ -42,7 +49,12 @@ export class MenuComponent implements OnInit {
     label: 'Confirmar',
     danger: false,
     action: () => {
-      alert('requisição sendo feita')
+      let params = [
+        { 'seq': this.apontamentos.seq }
+      ]
+      this.itemsApont.push(params)
+      console.log(this.itemsApont)
+      this.thfModal.close()
     }
   }
 

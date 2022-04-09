@@ -1,6 +1,6 @@
+import { MenuComponent } from './../menu/menu.component';
 import { TabelaApontamentosService } from './../../services/tabela-apontamentos.service';
-import { TabelaExameService } from './../../services/tabela-exame.service';
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ThfTableColumn } from '@totvs/thf-ui';
 
 @Component({
@@ -10,9 +10,14 @@ import { ThfTableColumn } from '@totvs/thf-ui';
 })
 export class TabelaApontamentosComponent implements OnInit {
 
+  /* @ViewChild(MenuComponent, { static: false }) itensApont: MenuComponent */
+
   constructor(private serviceApontamento: TabelaApontamentosService) { }
 
   columns: Array<ThfTableColumn>
+
+  itensApont: MenuComponent
+  items: Array<any> = []
 
   ngOnInit() {
     this.loadColumnsApontamentos()

@@ -8,18 +8,20 @@ export class TabelaApontamentosService {
 
   constructor() { }
 
+  itensApontTable
+
   getColumnsApontamentos(): Array<ThfTableColumn> {
     return [
-      { property: '', label: 'Seq' },
-      { property: '', label: 'Tipo' },
-      { property: '', label: 'Exame' },
-      { property: '', label: 'Componente' },
-      { property: '', label: 'Num Embal' },
-      { property: '', label: 'Tp Result' },
-      { property: '', label: 'Resultado' },
-      { property: '', label: 'Data' },
-      { property: '', label: 'Hora' },
-      { property: '', label: 'Usuário' },
+      { property: 'seq', label: 'Seq' },
+      { property: 'tipo', label: 'Tipo' },
+      { property: 'exame', label: 'Exame' },
+      { property: 'componente', label: 'Componente' },
+      { property: 'numemb', label: 'Num Embal' },
+      { property: 'tpresult', label: 'Tp Result' },
+      { property: 'resultado', label: 'Resultado' },
+      { property: 'data', label: 'Data' },
+      { property: 'hota', label: 'Hora' },
+      { property: 'user', label: 'Usuário' },
     ]
   }
 }

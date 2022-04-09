@@ -1,25 +1,19 @@
-<mat-card>
-<div class="logo">
-  <a href="">
-    <img src="../../../assets/cassava.png" alt="logo cassava">
-  </a>
-</div>
-  <mat-card-title>Login</mat-card-title>
-<mat-card-content>
-<form [formGroup]="form" (ngSubmit)="submit()">
-  <p>
-    <mat-form-field>
-      <input type="text" matInput [(ngModel)]="operador" placeholder="Código do operador" formControlName="username">
-    </mat-form-field>
-  </p>
+ <div class="widget">
+   <thf-widget >
+    <div class="logo">
+     <p>Cassava S/A</p>
+    </div>
 
-  <p *ngIf="error" class="error">
-    {{ error }}
-  </p>
+    <div class="login">
+      <thf-login t-label="Login" [(ngModel)]="login" t-required="true"></thf-login>
+    </div>
 
-  <div class="button">
-    <button type="submit" mat-button>Login</button>
-  </div>
-</form>
-</mat-card-content>
-</mat-card>
+    <div class="senha">
+      <thf-password t-label="Senha" [(ngModel)]="senha" t-required="true"></thf-password>
+    </div>
+
+    <div class="button">
+      <thf-button t-label="Login" t-type="primary" (t-click)="submit()"></thf-button>
+    </div>
+   </thf-widget>
+ </div>
