@@ -175,8 +175,8 @@ export class MenuComponent implements OnInit {
     label: 'Confirmar',
     danger: false,
     action: () => {
-      this.ficha = this.inserirFicha.ficha
-      console.log(this.ficha)
+      console.log(this.inserirFicha.ficha)
+      console.log(this.inserirFicha.selectedProduto)
       this.thfModal.close()
     }
   }

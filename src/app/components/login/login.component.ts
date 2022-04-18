@@ -11,7 +11,7 @@ export class LoginComponent implements OnInit {
 
   login: any
   senha: any
-  cliente: any
+  companhia: any = 'Selecione uma companhia'
 
   options: Array<ThfSelectOption> = [
     { label: 'Companhia 1', value: '1' },
@@ -34,6 +34,7 @@ export class LoginComponent implements OnInit {
     } else {
       this.thfDialog.alert({ title: 'Atenção', message: 'Senha ou login incorreto!!' })
     }
+    console.log(this.companhia)
   }
 
 }

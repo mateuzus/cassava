@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { ThfComboOption, ThfModalComponent, ThfRadioGroupOption, ThfSelectOption } from '@totvs/thf-ui';
+import { ThfModalComponent, ThfRadioGroupOption } from '@totvs/thf-ui';
 
 @Component({
   selector: 'app-inserir-ficha',
@@ -19,10 +19,10 @@ export class InserirFichaComponent implements OnInit {
   ]
 
   optionsSelect: Array<any> = [
-    {label: 'EPC - 106 - C400 - POR - 52758 - SOLAZIME BUN - FÉCULA DE MANDIOCA C 400', value: '1'},
-    {label: 'EPC - 106 - C400 - POR - 53097 - MALALÉRIO - FÉCULA DE MANDIOCA C 400', value: '2'},
-    {label: 'EPC - 106 - C400 - POR - 53265 - JBS - LINS - FÉCULA DE MANDIOCA C 400', value: '3'},
-    {label: 'EPC - 106 - C400 - POR - 500083 - HIKARI - FÉCULA DE MANDIOCA C 400', value: '4'}
+    { label: 'EPC - 106 - C400 - POR - 52758 - SOLAZIME BUN - FÉCULA DE MANDIOCA C 400', value: '1' },
+    { label: 'EPC - 106 - C400 - POR - 53097 - MALALÉRIO - FÉCULA DE MANDIOCA C 400', value: '2' },
+    { label: 'EPC - 106 - C400 - POR - 53265 - JBS - LINS - FÉCULA DE MANDIOCA C 400', value: '3' },
+    { label: 'EPC - 106 - C400 - POR - 500083 - HIKARI - FÉCULA DE MANDIOCA C 400', value: '4' }
   ]
 
   //váriaveis dos inputs
@@ -42,10 +42,12 @@ export class InserirFichaComponent implements OnInit {
   validade: any
   selectedFinal: any
   modal_type = ''
+  selectedProduto: any = 'Selecione um produto'
 
   constructor() { }
 
   ngOnInit() {
+    
   }
 
 }

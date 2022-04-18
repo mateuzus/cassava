@@ -2,7 +2,6 @@ import { TabelaExameService } from './services/tabela-exame.service';
 import { AppRoutingModule } from './app-routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -23,7 +22,7 @@ import { CabecalhoComponent } from './components/menu/cabecalho/cabecalho.compon
     InserirApontamentosComponent,
     LoginComponent,
     InserirFichaComponent,
-    CabecalhoComponent
+    CabecalhoComponent,
   ],
   imports: [
     AppRoutingModule,

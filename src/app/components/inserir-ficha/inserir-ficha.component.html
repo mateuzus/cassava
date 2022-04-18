@@ -11,7 +11,10 @@
 </div>
 
 <div class="lupa">
-  <thf-select t-label="Produto" class="thf-md-12" [t-options]="optionsSelect" t-placeholder="Selecione um produto"></thf-select>
+  <select class="form-select lupa" [(ngModel)]="selectedProduto">
+    <option selected>Selecione um produto</option>
+    <option *ngFor="let item of optionsSelect" [value]="item.value">{{item.label}}</option>
+  </select>
 </div>
 
 <div class="cliente">
@@ -23,11 +26,13 @@
 <div class="lote">
   <thf-input class="thf-md-4 thf-sm-4" t-label="Lote" [(ngModel)]="lote"></thf-input>
   <thf-input class="thf-md-4 thf-sm-4" t-label="Responsável" [(ngModel)]="responsavel"></thf-input>
-  <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="options" [(ngModel)]="selectedFicha"></thf-checkbox-group>
+  <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="options" [(ngModel)]="selectedFicha">
+  </thf-checkbox-group>
 </div>
 
 <div class="fabric">
   <thf-input class="thf-md-4 thf-sm-4" t-label="Fabric" [(ngModel)]="fabric"></thf-input>
   <thf-input class="thf-md-4 thf-sm-4" t-label="Validade" [(ngModel)]="validade"></thf-input>
-  <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="optionsFabric" [(ngModel)]="selectedFinal"></thf-checkbox-group>
+  <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="optionsFabric" [(ngModel)]="selectedFinal">
+  </thf-checkbox-group>
 </div>

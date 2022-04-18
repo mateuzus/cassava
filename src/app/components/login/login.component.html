@@ -5,19 +5,22 @@
     </div>
 
     <div class="login">
-      <thf-login class="thf-md-12 thf-sm-10" t-label="Login" [(ngModel)]="login" t-required="true"></thf-login>
+      <thf-login class="thf-md-12 thf-sm-12" t-label="Login" [(ngModel)]="login" t-required="true"></thf-login>
     </div>
 
     <div class="senha">
-      <thf-password class="thf-md-12 thf-sm-10" t-label="Senha" [(ngModel)]="senha" t-required="true"></thf-password>
+      <thf-password class="thf-md-12 thf-sm-12" t-label="Senha" [(ngModel)]="senha" t-required="true"></thf-password>
     </div>
 
-    <div class="select">
-      <thf-select class="thf-md-12 thf-sm-10" t-label="Companhias" t-placeholder="Selecione uma compania" [t-options]="options" [(ngModel)]="cliente"></thf-select>
+    <div class="col-md-12 select">
+      <select class="form-select" [(ngModel)]="companhia">
+        <option selected>Selecione uma companhia</option>
+        <option *ngFor="let item of options" [value]="item.value">{{item.label}}</option>
+      </select>
     </div>
 
     <div class="button">
-      <thf-button class="thf-md-12 thf-sm-10 botao" t-label="Login" t-type="primary" (t-click)="submit()"></thf-button>
+      <thf-button class="thf-md-12 thf-sm-12 botao" t-label="Login" t-type="primary" (t-click)="submit()"></thf-button>
     </div>
    </thf-widget>
  </div>
