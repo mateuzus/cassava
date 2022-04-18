@@ -10,15 +10,15 @@ export class TabelaExameService {
 
   getColumnsExames(): Array<ThfTableColumn> {
     return [
-      { property: '', label: 'Exame' },
-      { property: '', label: 'Componente' },
-      { property: '', label: 'Resul. Referência' },
-      { property: '', label: 'Mostrar' },
-      { property: '', label: 'Resultado' },
-      { property: '', label: 'Un' },
-      { property: '', label: 'Impr' },
-      { property: '', label: 'Local' },
-      { property: '', label: 'Freq' },
+      { property: 'exame', label: 'Exame' },
+      { property: 'componente', label: 'Componente' },
+      { property: 'referencia', label: 'Resul. Referência' },
+      { property: 'mostrar', label: 'Mostrar' },
+      { property: 'resultado', label: 'Resultado' },
+      { property: 'unidade', label: 'Un' },
+      { property: 'impr', label: 'Impr' },
+      { property: 'local', label: 'Local' },
+      { property: 'frequencia', label: 'Freq' },
     ]
   }
 }

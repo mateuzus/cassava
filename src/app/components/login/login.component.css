@@ -4,15 +4,15 @@
   margin: 100px 0px;
 }
 
-.widget {
-  display: flex;
-  justify-content: center;
-}
+/* html,
+body {
+  height: 100%;
+  width: auto;
+} */
 
-.button {
-  display: flex;
-  justify-content: flex-end;
-  margin: 10px 0px 10px 0px;
+.botao {
+  margin-top: 15px;
+  margin-bottom: 15px;
 }
 
 .login {
@@ -34,7 +34,11 @@
   margin: 10px 0px 10px 0px;
   font-size: 60px;
   color: black;
-  background-image: linear-gradient(to right, rgb(88, 165, 209), rgb(66, 125, 167));
+  background-image: linear-gradient(
+    to right,
+    rgb(88, 165, 209),
+    rgb(66, 125, 167)
+  );
   -webkit-background-clip: text;
 
   /* Adicionado: */
@@ -42,5 +46,12 @@
 }
 
 .logo p {
-  font-family: 'Fredoka One', cursive;
+  font-family: "Fredoka One", cursive;
+}
+
+@media only screen and (max-width: 479px) {
+  .logo p {
+    margin-left: -60px;
+    font-size: 50px;
+  }
 }

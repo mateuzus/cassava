@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { ThfDialogService, ThfSelectOption } from '@totvs/thf-ui';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,16 @@ export class LoginComponent implements OnInit {
 
   login: any
   senha: any
+  cliente: any
 
-  constructor(private router: Router) { }
+  options: Array<ThfSelectOption> = [
+    { label: 'Companhia 1', value: '1' },
+    { label: 'Companhia 2', value: '2' },
+    { label: 'Companhia 3', value: '3' }
+  ]
+
+  constructor(private router: Router,
+    public thfDialog: ThfDialogService) { }
 
   ngOnInit() {
   }
@@ -20,11 +29,10 @@ export class LoginComponent implements OnInit {
     let data = [
       { login: this.login, senha: this.senha }
     ]
-    console.log(data)
     if (this.login == "123" && this.senha == "123") {
       this.router.navigate(['menu']);
     } else {
-      console.log('Senha incorreta!')
+      this.thfDialog.alert({ title: 'Atenção', message: 'Senha ou login incorreto!!' })
     }
   }
 

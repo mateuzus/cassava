@@ -16,5 +16,32 @@
 }
 
 .insert-apont {
- margin-top: 20px;
+ margin-top: 30px;
+}
+
+
+.finalizar {
+  margin-left: 15px;
+}
+
+.apontamentos {
+  margin-bottom: 15px;
+}
+
+.cabecalho {
+  display: flex;
+  justify-content: center;
+}
+
+.input {
+  margin-top: 24px;
+}
+
+.radio {
+  margin-left: 8px;
+}
+
+.grid {
+  margin-top: 10px;
+  margin-bottom: 10px;
 }

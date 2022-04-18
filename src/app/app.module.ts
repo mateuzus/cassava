@@ -9,22 +9,20 @@ import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { ThfModule } from '@totvs/thf-ui';
 import { MenuComponent } from './components/menu/menu.component';
-import { TabelaExamesComponent } from './components/tabela-exames/tabela-exames.component';
-import { TabelaApontamentosComponent } from './components/tabela-apontamentos/tabela-apontamentos.component';
 import { InserirApontamentosComponent } from './components/inserir-apontamentos/inserir-apontamentos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './components/login/login.component';
-import { CabecalhoComponent } from './components/cabecalho/cabecalho.component';
 import { ThfPageDynamicSearchModule } from '@totvs/thf-templates';
+import { InserirFichaComponent } from './components/inserir-ficha/inserir-ficha.component';
+import { CabecalhoComponent } from './components/menu/cabecalho/cabecalho.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
-    TabelaExamesComponent,
-    TabelaApontamentosComponent,
     InserirApontamentosComponent,
     LoginComponent,
+    InserirFichaComponent,
     CabecalhoComponent
   ],
   imports: [

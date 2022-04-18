@@ -8,10 +8,39 @@ export class TabelaApontamentosService {
 
   constructor() { }
 
-  itensApontTable
-
-  getColumnsApontamentos(): Array<ThfTableColumn> {
+  getColumnsApontamentos(component_instance): Array<ThfTableColumn> {
     return [
+      {
+        property: "actions",
+        label: "Ações",
+        type: "icon",
+        icons: [
+          {
+            action: (value, row) => {
+              component_instance.deleteRowApont(
+                value,
+                row
+              )
+            },
+            color: "primary",
+            icon: "thf-icon thf-icon-delete",
+            tooltip: "Clique aqui para deletar",
+            value: "deletar"
+          },
+          {
+            action: (value, row) => {
+              component_instance.digitacaoApont(
+                value,
+                row
+              )
+            },
+            color: "primary",
+            icon: "thf-icon thf-icon-edit",
+            tooltip: "Clique aqui para digitar",
+            value: "digitar"
+          }
+        ]
+      },
       { property: 'seq', label: 'Seq' },
       { property: 'tipo', label: 'Tipo' },
       { property: 'exame', label: 'Exame' },
@@ -20,7 +49,7 @@ export class TabelaApontamentosService {
       { property: 'tpresult', label: 'Tp Result' },
       { property: 'resultado', label: 'Resultado' },
       { property: 'data', label: 'Data' },
-      { property: 'hota', label: 'Hora' },
+      { property: 'hora', label: 'Hora' },
       { property: 'user', label: 'Usuário' },
     ]
   }

@@ -5,9 +5,39 @@
     </div>
   </thf-menu>
 
-  <thf-toolbar t-title="Exames" [t-show-notification]="false"></thf-toolbar>
-
   <thf-page-dynamic-search t-title="Lista de exames" [t-filters]="[{ property: 'name' }]">
+
+    <div class="cabecalho">
+      <app-cabecalho></app-cabecalho>
+    </div>
+
+    <div class="nova-ficha">
+      <thf-button t-label="Nova ficha" t-type="primary" (t-click)="openFichaModal()"></thf-button>
+    </div>
+
+    <div class="exames">
+      <p>Exames</p>
+      <div class="exames">
+        <thf-table [t-items]="itemsExames" [t-columns]="columnsExame" detailHideSelect="true" t-container="border"
+          t-sort="true" t-striped="true">
+        </thf-table>
+      </div>
+
+    </div>
+
+    <div class="insert-apont">
+      <thf-button t-type="primary" (t-click)="openApontModal()" t-label="Novo apont."></thf-button>
+      <thf-button class="finalizar" t-type="primary" t-label="Finalizar"></thf-button>
+    </div>
+
+    <div class="apontamentos">
+      <p>Apontamentos</p>
+      <div class="apontamentos">
+        <thf-table [t-items]="itensApontamento" [t-columns]="columnsApont" detailHideSelect="true" t-container="border"
+          t-sort="true" t-striped="true">
+        </thf-table>
+      </div>
+    </div>
 
     <thf-modal [t-title]="title" t-size="xl" [t-primary-action]="getPrimaryActions()"
       [t-secondary-action]="getSecondaryActions()" t-click-out="true">
@@ -15,21 +45,44 @@
       <div *ngIf="modal_type === 'apontamento'">
         <app-inserir-apontamentos></app-inserir-apontamentos>
       </div>
+
+      <div *ngIf="modal_type === 'ficha'">
+        <app-inserir-ficha></app-inserir-ficha>
+      </div>
+
+      <div *ngIf="modal_type === 'digitacao'">
+        <div class="sequencia">
+          <thf-input class="thf-md-2" t-label="Seq"></thf-input>
+          <thf-input class="thf-md-5 input"></thf-input>
+          <thf-input class="thf-md-5 input"></thf-input>
+        </div>
+
+        <div class="radio">
+          <thf-radio-group [t-options]="options" t-columns="4" [(ngModel)]="optionSelected" t-disabled="true">
+          </thf-radio-group>
+        </div>
+
+        <div class="apos">
+          <thf-input class="thf-md-6" t-label="Após"></thf-input>
+          <thf-input class="thf-md-6" t-label="Número"></thf-input>
+        </div>
+
+        <div class="data-hora">
+          <thf-input class="thf-md-6" t-label="Data Apont"></thf-input>
+          <thf-input class="thf-md-6" t-label="Hora Apont"></thf-input>
+        </div>
+
+        <div class="grid">
+          <thf-grid class="thf-md-12 grid" [t-columns]="columnsGrid" [t-data]="data"></thf-grid>
+        </div>
+
+        <div class="totais">
+          <thf-input class="thf-md-6" t-label="Total Peso" t-disabled="true"></thf-input>
+          <thf-input class="thf-md-6" t-label="Total %" t-disabled="true"></thf-input>
+        </div>
+      </div>
     </thf-modal>
 
-    <div class="exames">
-      <p>Exames</p>
-      <app-tabela-exames></app-tabela-exames>
-    </div>
-
-    <div class="insert-apont">
-      <thf-button t-type="primary" (t-click)="openApontModal()" t-label="Inserir apont."></thf-button>
-    </div>
-
-    <div class="apontamentos">
-      <p>Apontamentos</p>
-      <app-tabela-apontamentos></app-tabela-apontamentos>
-    </div>
-
   </thf-page-dynamic-search>
+
 </div>
