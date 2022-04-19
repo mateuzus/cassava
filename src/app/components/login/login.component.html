@@ -9,11 +9,11 @@
     </div>
 
     <div class="senha">
-      <thf-password class="thf-md-12 thf-sm-12" t-label="Senha" [(ngModel)]="senha" t-required="true"></thf-password>
+      <thf-password (keyup)="keyUpEnter($event)" class="thf-md-12 thf-sm-12" t-label="Senha" [(ngModel)]="senha" t-required="true"></thf-password>
     </div>
 
     <div class="col-md-12 select">
-      <select class="form-select" [(ngModel)]="companhia">
+      <select class="form-select" (keyup)="keyUpEnter($event)" [(ngModel)]="companhia">
         <option selected>Selecione uma companhia</option>
         <option *ngFor="let item of options" [value]="item.value">{{item.label}}</option>
       </select>

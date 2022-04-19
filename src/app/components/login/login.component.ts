@@ -37,4 +37,10 @@ export class LoginComponent implements OnInit {
     console.log(this.companhia)
   }
 
+  keyUpEnter(event: KeyboardEvent) {
+    if (event.key == 'Enter') {
+        this.submit()
+    }
+}
+
 }

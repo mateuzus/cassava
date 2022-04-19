@@ -1,12 +1,12 @@
 <div class="ficha">
   <thf-input class="thf-md-2 thf-sm-3" t-label="Ficha" [(ngModel)]="ficha"></thf-input>
-  <thf-input class="thf-md-7 thf-sm-6" t-label="Descrição" [(ngModel)]="descricao"></thf-input>
+  <thf-input class="thf-md-7 thf-sm-6" t-label="Descrição" [(ngModel)]="descricao" t-readonly="true"></thf-input>
   <thf-input class="thf-md-3 thf-sm-2" t-label="_" [(ngModel)]="desc"></thf-input>
 </div>
 
 <div class="produto">
   <thf-input class="thf-md-2 thf-sm-3" t-label="Produto" [(ngModel)]="produto"></thf-input>
-  <thf-input class="thf-md-9 thf-sm-6" t-label="Descrição" [(ngModel)]="descProd"></thf-input>
+  <thf-input class="thf-md-9 thf-sm-6" t-label="Descrição" [(ngModel)]="descProd" t-readonly="true"></thf-input>
   <thf-input class="thf-md-1 thf-sm-2" t-label="Estab" [(ngModel)]="estab"></thf-input>
 </div>
 
@@ -19,19 +19,19 @@
 
 <div class="cliente">
   <thf-input class="thf-md-2 thf-sm-3" t-label="Cliente" [(ngModel)]="cliente"></thf-input>
-  <thf-input class="thf-md-7 thf-sm-6" t-label="Decrição" [(ngModel)]="descCliente"></thf-input>
+  <thf-input class="thf-md-7 thf-sm-6" t-label="Decrição" [(ngModel)]="descCliente" t-readonly="true"></thf-input>
   <thf-input class="thf-md-2 thf-sm-2" t-label="Versão" [(ngModel)]="versao"></thf-input>
 </div>
 
 <div class="lote">
   <thf-input class="thf-md-4 thf-sm-4" t-label="Lote" [(ngModel)]="lote"></thf-input>
-  <thf-input class="thf-md-4 thf-sm-4" t-label="Responsável" [(ngModel)]="responsavel"></thf-input>
+  <thf-input class="thf-md-4 thf-sm-4" t-label="Responsável" [(ngModel)]="responsavel" t-readonly="true"></thf-input>
   <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="options" [(ngModel)]="selectedFicha">
   </thf-checkbox-group>
 </div>
 
 <div class="fabric">
-  <thf-input class="thf-md-4 thf-sm-4" t-label="Fabric" [(ngModel)]="fabric"></thf-input>
+  <thf-input class="thf-md-4 thf-sm-4" t-label="Fabric" [(ngModel)]="fabric" ></thf-input>
   <thf-input class="thf-md-4 thf-sm-4" t-label="Validade" [(ngModel)]="validade"></thf-input>
   <thf-checkbox-group class="thf-md-4 thf-sm-4 checkbox" [t-options]="optionsFabric" [(ngModel)]="selectedFinal">
   </thf-checkbox-group>
