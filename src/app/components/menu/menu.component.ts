@@ -161,13 +161,12 @@ export class MenuComponent implements OnInit {
   }
 
   private modal_primary_action_confirm_apont: ThfModalAction = {
-    label: 'Confirmar',
+    label: 'Salva e próximo',
     danger: false,
     action: () => {
       this.itensApontamento.push({ seq: this.apontamentos.seq })
       this.addActionOnItensApont()
-      console.log(this.itemsApont)
-      this.thfModal.close()
+      this.apontamentos.seq = ''
     }
   }
 
@@ -192,7 +191,19 @@ export class MenuComponent implements OnInit {
     }
   }
 
-  //Ações secundárias
+  //Ação de salvar do modal de apontamento
+  private modal_secondary_action_salvar_apont: ThfModalAction = {
+    label: 'Salvar',
+    danger: false,
+    action: () => {
+      this.itensApontamento.push({ seq: this.apontamentos.seq })
+      console.log(this.apontamentos.horaSelecionada)
+      this.addActionOnItensApont()
+      alert('Salvando...')
+    }
+  }
+
+//Ações secundárias
   private modal_secondary_action_close: ThfModalAction = {
     label: 'Cancelar',
     danger: true,
@@ -200,6 +211,7 @@ export class MenuComponent implements OnInit {
       this.thfModal.close()
     }
   }
+
 
   addActionOnItensApont(): void {
     this.itensApontamento = this.itensApontamento.map((item) => {
@@ -225,7 +237,7 @@ export class MenuComponent implements OnInit {
   getSecondaryActions(): any {
     let actions = {
       filter: this.modal_secondary_action_close,
-      apontamento: this.modal_secondary_action_close,
+      apontamento: this.modal_secondary_action_salvar_apont,
       ficha: this.modal_secondary_action_close,
       digitacao: this.modal_secondary_action_close
     }
