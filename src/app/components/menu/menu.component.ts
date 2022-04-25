@@ -269,4 +269,17 @@ export class MenuComponent implements OnInit {
     })
   }
 
+  filterArray(row: any) {
+    /* let ficha = row['nr-ficha']
+
+    this.filteredArray = this.exames.filter(exame => {
+      return exame['nr-ficha'] == ficha */
+
+      console.log(row)
+  }
+
+  clearFilterArray() {
+    console.log('Limpou...')
+  }
+
 }

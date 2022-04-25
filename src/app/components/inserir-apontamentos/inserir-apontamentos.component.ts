@@ -38,7 +38,7 @@ export class InserirApontamentosComponent implements OnInit {
 
   dataFormatada: any;
 
-  constructor() {}
+  constructor() { }
 
   ngOnInit() {
     this.dataAtual = this.formatDate(this.data);
@@ -52,6 +52,7 @@ export class InserirApontamentosComponent implements OnInit {
     let d = date.getDate();
     let m = date.getMonth() + 1;
     let y = date.getFullYear();
+    console.log(d, m, y)
 
     let hora = h < 10 ? "0" + h : h;
     let minutos = min < 10 ? "0" + min : min;
@@ -61,34 +62,32 @@ export class InserirApontamentosComponent implements OnInit {
 
     let dateAdd = `${ano}-${mes}-${dia}T${hora}:${minutos}`;
 
-    console.log(dateAdd)
     let data = new Date(dateAdd);
-    console.log(data)
-    let addMinutos: any = this.hora
 
     data.setMinutes(data.getMinutes() + 60);
-    console.log(data)
+
     this.hora = data
-    console.log(this.hora)
-    this.horaAtual = this.formatHours(this.hora);
+
+    this.horaAtual = this.formatHours(this.hora)
     this.dataAtual = this.formatDate(this.hora)
-    console.log(this.horaAtual)
   }
 
   zeroFill(n) {
     return n < 9 ? `0${n}` : `${n}`;
   }
 
-  formatHours(date) {
-    const h = this.zeroFill(date.getHours());
-    const m = this.zeroFill(date.getMinutes());
-    return `${h}:${m}`;
+  formatHours(hour) {
+    const h = this.zeroFill(hour.getHours());
+    const m = this.zeroFill(hour.getMinutes());
+    let hora = `${h}:${m}`;
+    return hora
   }
 
   formatDate(date) {
-    const d = this.zeroFill(date.getDay());
+    const d = this.zeroFill(date.getDate());
     const m = this.zeroFill(date.getMonth() + 1);
     const y = this.zeroFill(date.getFullYear());
-    return `${d}/${m}/${y}`;
+    let data = `${d}/${m}/${y}`;
+    return data
   }
 }

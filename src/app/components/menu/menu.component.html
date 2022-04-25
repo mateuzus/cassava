@@ -13,13 +13,14 @@
 
     <div class="nova-ficha">
       <thf-button t-label="Nova ficha" t-type="primary" (t-click)="openFichaModal()"></thf-button>
+      <thf-button class="duplicar" t-label="Duplicar" t-type="primary"></thf-button>
     </div>
 
     <div class="exames">
       <p>Exames</p>
       <div class="exames">
         <thf-table [t-items]="itemsExames" t-checkbox="true" t-single-select="true" [t-columns]="columnsExame" detailHideSelect="true" t-container="border"
-          t-sort="true" t-striped="true">
+          t-sort="true" t-striped="true" (t-selected)="filterArray($event)" (t-unselected)="clearFilterArray()">
         </thf-table>
       </div>
 

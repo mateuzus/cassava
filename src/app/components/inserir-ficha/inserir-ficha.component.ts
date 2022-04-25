@@ -49,5 +49,4 @@ export class InserirFichaComponent implements OnInit {
   ngOnInit() {
     
   }
-
 }
